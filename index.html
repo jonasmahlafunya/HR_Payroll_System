@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HRPMS Pro – Enterprise HR & Payroll</title>
+
+  <!-- External Dependencies -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  <link rel="icon" href="data:,">
+
+  <!-- Internal CSS -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/themes.css">
+
+  <!-- External JS -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+  <script>
+    // Global Error Handler to supress non-critical errors
+    window.addEventListener('error', function (e) {
+      if (e.message.includes('Access to XMLHttpRequest') || e.message.includes('favicon')) {
+        // Suppress known file:// protocol noise
+        return;
+      }
+      console.warn('Caught runtime error:', e.message);
+    });
+  </script>
+</head>
+
+<body>
+
+  <!-- Toast Notifications Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- All Modals will be generated dynamically -->
+
+  <!-- LOGIN SCREEN -->
+  <div class="login-wrapper" id="loginScreen">
+    <div class="login-card">
+      <div class="login-logo">
+        <h1>HRPMS Pro</h1>
+        <p class="login-subtitle">Enterprise HR & Payroll – South Africa Compliant</p>
+      </div>
+
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" class="form-control" id="username" required autocomplete="username" autofocus>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" required autocomplete="current-password">
+        </div>
+        <div class="form-group" id="twoFactorSection" style="display: none;">
+          <label for="twoFactor">Two-Factor Code</label>
+          <input type="text" class="form-control" id="twoFactor" placeholder="Enter 6-digit code">
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+          <span id="loginBtnText">Sign In</span>
+          <span id="loginSpinner" style="display: none;" class="loading-spinner"></span>
+        </button>
+      </form>
+
+      <div class="demo-accounts"
+        style="margin-top: 32px; padding: 20px; background: var(--gray-50); border-radius: 12px;">
+        <strong>Demo Accounts:</strong><br>
+        • admin / admin → HR Administrator<br>
+        • payroll / payroll → Payroll Officer<br>
+        • emp001 / pass → Employee (Thabo Mokoena)<br>
+        • emp002 / pass → Employee (Sarah Van der Merwe)<br>
+        • emp003 / pass → Employee (Sipho Ndlovu)<br>
+        • manager1 / pass → Department Manager
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN APP -->
+  <div class="app-wrapper" id="appScreen" style="display:none;">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h2>HRPMS Pro</h2>
+        <small style="color: var(--primary-light); font-weight: 500;">Enterprise Edition</small>
+      </div>
+
+      <div class="sidebar-content">
+        <div class="nav-section">
+          <div class="nav-section-title">Main</div>
+          <a class="nav-link active" data-page="dashboard" title="Dashboard">
+            <div class="nav-icon"><i class="fas fa-home"></i></div>
+            Dashboard
+          </a>
+          <a class="nav-link" data-page="profile" title="My Profile">
+            <div class="nav-icon"><i class="fas fa-user"></i></div>
+            My Profile
+          </a>
+          <a class="nav-link" data-page="employeeportal" title="Employee Portal">
+            <div class="nav-icon"><i class="fas fa-user-circle"></i></div>
+            Employee Portal
+          </a>
+        </div>
+
+        <div class="nav-section">
+          <div class="nav-section-title">Core HR</div>
+          <a class="nav-link" data-page="companies" title="Companies">
+            <div class="nav-icon"><i class="fas fa-building"></i></div>
+            Companies
+          </a>
+          <a class="nav-link" data-page="employees" title="Employees">
+            <div class="nav-icon"><i class="fas fa-users"></i></div>
+            Employees
+          </a>
+          <a class="nav-link" data-page="recruitment" title="Recruitment">
+            <div class="nav-icon"><i class="fas fa-briefcase"></i></div>
+            Recruitment
+          </a>
+          <a class="nav-link" data-page="onboarding" title="Onboarding">
+            <div class="nav-icon"><i class="fas fa-check-double"></i></div>
+            Onboarding
+          </a>
+          <a class="nav-link" data-page="offboarding" title="Offboarding">
+            <div class="nav-icon"><i class="fas fa-sign-out-alt"></i></div>
+            Offboarding
+          </a>
+        </div>
+
+        <div class="nav-section">
+          <div class="nav-section-title">Payroll & Benefits</div>
+          <a class="nav-link" data-page="payroll" title="Payroll">
+            <div class="nav-icon"><i class="fas fa-money-bill-wave"></i></div>
+            Payroll
+          </a>
+          <a class="nav-link" data-page="payslips" title="Payslips">
+            <div class="nav-icon"><i class="fas fa-file-invoice"></i></div>
+            Payslips
+          </a>
+          <a class="nav-link" data-page="benefits" title="Benefits">
+            <div class="nav-icon"><i class="fas fa-heart"></i></div>
+            Benefits
+          </a>
+          <a class="nav-link" data-page="taxcompliance" title="Tax Compliance">
+            <div class="nav-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+            Tax Compliance
+          </a>
+        </div>
+
+        <div class="nav-section">
+          <div class="nav-section-title">Time & Leave</div>
+          <a class="nav-link" data-page="timeattendance" title="Time & Attendance">
+            <div class="nav-icon"><i class="fas fa-clock"></i></div>
+            Time & Attendance
+          </a>
+          <a class="nav-link" data-page="leave" title="Leave Management">
+            <div class="nav-icon"><i class="fas fa-calendar-alt"></i></div>
+            Leave
+          </a>
+        </div>
+
+        <div class="nav-section">
+          <div class="nav-section-title">Performance</div>
+          <a class="nav-link" data-page="performance" title="Performance Management">
+            <div class="nav-icon"><i class="fas fa-chart-line"></i></div>
+            Performance
+          </a>
+        </div>
+
+        <div class="nav-section">
+          <div class="nav-section-title">More</div>
+          <a class="nav-link" data-page="documents" title="Documents">
+            <div class="nav-icon"><i class="fas fa-folder"></i></div>
+            Documents
+          </a>
+          <a class="nav-link" data-page="reports" title="Reports & Analytics">
+            <div class="nav-icon"><i class="fas fa-chart-bar"></i></div>
+            Reports
+          </a>
+          <a class="nav-link" data-page="settings" title="Settings">
+            <div class="nav-icon"><i class="fas fa-cog"></i></div>
+            Settings
+          </a>
+        </div>
+
+        <div class="nav-section" style="margin-top: auto; padding-bottom: 20px;">
+          <a class="nav-link" id="logoutBtn" title="Logout">
+            <div class="nav-icon"><i class="fas fa-sign-out-alt"></i></div>
+            Logout
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <div class="top-bar">
+        <div class="page-title">
+          <h1 id="pageTitle">Dashboard</h1>
+          <div class="breadcrumb" id="breadcrumb">
+            <a href="#" onclick="loadPage('dashboard')">Dashboard</a>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 20px;">
+          <div class="search-box">
+            <input type="text" class="search-input" placeholder="Search employees, documents..." id="globalSearch"
+              onkeyup="window.performGlobalSearch(this.value)">
+          </div>
+          <div class="notification-bell" style="position: relative;">
+            <button class="btn btn-outline" style="padding: 8px;" onclick="showNotifications()">
+              <i class="fas fa-bell"></i>
+              <span class="badge badge-danger" style="position: absolute; top: -5px; right: -5px; padding: 3px 6px;"
+                id="notificationCount">3</span>
+            </button>
+          </div>
+          <div>
+            Welcome, <strong id="current-user">User</strong>
+            <div style="font-size: 0.8rem; color: var(--gray-600);" id="userRole"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-area" id="content">
+        <!-- Content will be loaded here -->
+      </div>
+    </main>
+  </div>
+
+  <!-- Notification Panel -->
+  <div id="notificationPanel"
+    style="display: none; position: fixed; top: 70px; right: 20px; width: 350px; max-height: 500px; overflow-y: auto; background: white; border-radius: var(--radius); box-shadow: var(--shadow-xl); z-index: 1000; border: 1px solid var(--gray-200);">
+    <div
+      style="padding: 20px; border-bottom: 1px solid var(--gray-200); display: flex; justify-content: space-between; align-items: center;">
+      <h4 style="margin: 0;">Notifications</h4>
+      <button class="btn btn-sm btn-outline" onclick="markAllAsRead()">Mark all read</button>
+    </div>
+    <div id="notificationList" style="padding: 10px;">
+      <!-- Notifications will be loaded here -->
+    </div>
+  </div>
+
+  <!-- Load JavaScript Files -->
+  <script src="js/data.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/core.js"></script>
+  <script src="js/modules/profile.js"></script>
+  <script src="js/modules/employees.js"></script>
+  <script src="js/modules/companies.js"></script>
+  <script src="js/modules/payroll.js"></script>
+  <script src="js/modules/payslips.js"></script>
+  <script src="js/modules/leave.js"></script>
+  <script src="js/modules/timeattendance.js"></script>
+  <script src="js/modules/performance.js"></script>
+  <script src="js/modules/recruitment.js"></script>
+  <script src="js/modules/onboarding.js"></script>
+  <script src="js/modules/offboarding.js"></script>
+  <script src="js/modules/documents.js"></script>
+  <script src="js/modules/reports.js"></script>
+  <script src="js/modules/settings.js"></script>
+  <script src="js/modules/dashboard.js"></script>
+  <script src="js/modules/employeeportal.js"></script>
+  <script src="js/modules/benefits.js"></script>
+  <script src="js/modules/taxcompliance.js"></script>
+
+  <!-- Payroll Wizard & Supporting Modules -->
+  <script src="js/modules/payrollvalidation.js"></script>
+  <script src="js/modules/varianceanalysis.js"></script>
+  <script src="js/modules/bankfile.js"></script>
+  <script src="js/modules/payrollwizard.js"></script>
+
+
+  <!-- Initialize Dashboard on Load -->
+  <script>
+    // Ensure Dashboard renders on initial page load
+    document.addEventListener('DOMContentLoaded', function () {
+      // Wait for all modules to load
+      setTimeout(() => {
+        if (currentPage === 'dashboard' && typeof Dashboard !== 'undefined') {
+          const content = document.getElementById('content');
+          if (content) {
+            Dashboard.render(content);
+          }
+        }
+      }, 100);
+    });
+  </script>
+
+  <script>
+    // Initialize the application when DOM is loaded
+    document.addEventListener('DOMContentLoaded', function () {
+      // Initialize Select2 if jQuery is available
+      if (typeof jQuery !== 'undefined' && typeof jQuery.fn.select2 === 'function') {
+        jQuery('.select2').select2({
+          width: '100%',
+          theme: 'default'
+        });
+      }
+
+      // Check for saved user session
+      const savedUser = localStorage.getItem('hrpms_user');
+      if (savedUser) {
+        try {
+          const user = JSON.parse(savedUser);
+          // Find the user in DB
+          const foundUser = window.DB?.users?.find(u => u.username === user.username);
+          if (foundUser) {
+            window.currentUser = foundUser;
+            if (foundUser.employeeId) {
+              window.currentEmployee = window.DB?.employees?.find(e => e.id === foundUser.employeeId);
+            }
+
+            document.getElementById('loginScreen').style.display = 'none';
+            document.getElementById('appScreen').style.display = 'flex';
+            document.getElementById('current-user').textContent = foundUser.name;
+            document.getElementById('userRole').textContent = foundUser.role;
+
+            updateNotificationCount();
+            loadPage('dashboard');
+          }
+        } catch (e) {
+          console.error('Error loading saved user:', e);
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>
