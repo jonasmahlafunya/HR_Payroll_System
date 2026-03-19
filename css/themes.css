@@ -1,0 +1,542 @@
+/* ================================================================
+   HRPMS Pro – Themes, Dark Mode & Notifications
+   ================================================================ */
+
+/* ════════════════════════════════════════════
+   ACCESSIBILITY
+   ════════════════════════════════════════════ */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* ════════════════════════════════════════════
+   HIGH CONTRAST
+   ════════════════════════════════════════════ */
+@media (prefers-contrast: high) {
+  :root {
+    --primary: #1D4ED8;
+    --primary-dark: #1E3A8A;
+    --success: #065F46;
+    --danger: #991B1B;
+    --warning: #92400E;
+  }
+}
+
+/* ════════════════════════════════════════════
+   REDUCED MOTION
+   ════════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ════════════════════════════════════════════
+   PRINT
+   ════════════════════════════════════════════ */
+@media print {
+
+  .sidebar,
+  .top-bar,
+  .btn,
+  .toast-container,
+  #notificationPanel {
+    display: none !important;
+  }
+
+  .main-content {
+    margin-left: 0 !important;
+  }
+
+  .card {
+    box-shadow: none !important;
+    border: 1px solid #CBD5E1 !important;
+    page-break-inside: avoid;
+  }
+
+  .content-area {
+    padding: 0 !important;
+  }
+}
+
+/* ════════════════════════════════════════════
+   TOAST NOTIFICATIONS
+   ════════════════════════════════════════════ */
+.toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 99999;
+  pointer-events: none;
+}
+
+.toast {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  padding: 13px 15px;
+  min-width: 300px;
+  max-width: 380px;
+  box-shadow: var(--shadow-lg);
+  pointer-events: all;
+  opacity: 0;
+  transform: translateX(12px) scale(0.98);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}
+
+.toast-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.toast-success .toast-icon {
+  background: var(--success-soft);
+  color: var(--success);
+}
+
+.toast-info .toast-icon {
+  background: var(--info-soft);
+  color: var(--info);
+}
+
+.toast-warning .toast-icon {
+  background: var(--warning-soft);
+  color: var(--warning);
+}
+
+.toast-danger .toast-icon {
+  background: var(--danger-soft);
+  color: var(--danger);
+}
+
+.toast-success {
+  border-left: 3px solid var(--success);
+}
+
+.toast-info {
+  border-left: 3px solid var(--info);
+}
+
+.toast-warning {
+  border-left: 3px solid var(--warning);
+}
+
+.toast-danger {
+  border-left: 3px solid var(--danger);
+}
+
+.toast-content {
+  flex: 1;
+  font-size: 0.84rem;
+  font-weight: 500;
+  color: var(--gray-800);
+  line-height: 1.4;
+}
+
+.toast-title {
+  font-weight: 700;
+  font-size: 0.86rem;
+  color: var(--gray-900);
+  margin-bottom: 2px;
+}
+
+.toast-close {
+  background: none;
+  border: none;
+  color: var(--gray-400);
+  cursor: pointer;
+  padding: 2px 4px;
+  border-radius: var(--radius-xs);
+  font-size: 0.7rem;
+  transition: var(--transition);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.toast-close:hover {
+  color: var(--gray-600);
+  background: var(--gray-100);
+}
+
+/* ════════════════════════════════════════════
+   ALERT MODALS (NexaPOS style)
+   ════════════════════════════════════════════ */
+.nexa-alert-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.5);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 99998;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: nexaFadeIn 0.15s ease;
+}
+
+.nexa-alert-box {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--gray-200);
+  box-shadow: var(--shadow-xl);
+  width: 100%;
+  max-width: 400px;
+  overflow: hidden;
+  animation: nexaSlideUp 0.2s ease;
+}
+
+.nexa-alert-icon-wrap {
+  display: flex;
+  justify-content: center;
+  padding: 28px 24px 0;
+}
+
+.nexa-alert-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+}
+
+.nexa-alert-icon.danger {
+  background: var(--danger-soft);
+  color: var(--danger);
+}
+
+.nexa-alert-icon.warning {
+  background: var(--warning-soft);
+  color: var(--warning);
+}
+
+.nexa-alert-icon.success {
+  background: var(--success-soft);
+  color: var(--success);
+}
+
+.nexa-alert-icon.info {
+  background: var(--info-soft);
+  color: var(--info);
+}
+
+.nexa-alert-icon.primary {
+  background: var(--primary-soft);
+  color: var(--primary);
+}
+
+.nexa-alert-body {
+  padding: 16px 28px 24px;
+  text-align: center;
+}
+
+.nexa-alert-body h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 8px;
+  letter-spacing: -0.2px;
+}
+
+.nexa-alert-body p {
+  font-size: 0.87rem;
+  color: var(--gray-500);
+  line-height: 1.5;
+}
+
+.nexa-alert-footer {
+  padding: 14px 24px;
+  border-top: 1px solid var(--gray-100);
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* ════════════════════════════════════════════
+   CONFIRM MODAL
+   ════════════════════════════════════════════ */
+.nexa-confirm-box {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--gray-200);
+  box-shadow: var(--shadow-xl);
+  width: 100%;
+  max-width: 440px;
+  overflow: hidden;
+  animation: nexaSlideUp 0.2s ease;
+}
+
+.nexa-confirm-header {
+  padding: 18px 22px 14px;
+  border-bottom: 1px solid var(--gray-100);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nexa-confirm-header h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 0;
+  letter-spacing: -0.2px;
+}
+
+.nexa-confirm-body {
+  padding: 18px 22px;
+  font-size: 0.87rem;
+  color: var(--gray-600);
+  line-height: 1.55;
+}
+
+.nexa-confirm-footer {
+  padding: 14px 22px;
+  border-top: 1px solid var(--gray-100);
+  display: flex;
+  justify-content: flex-end;
+  gap: 9px;
+}
+
+/* ════════════════════════════════════════════
+   NOTIFICATION PANEL
+   ════════════════════════════════════════════ */
+#notificationPanel {
+  position: fixed !important;
+  top: 62px !important;
+  right: 20px !important;
+  width: 340px !important;
+  max-height: 500px !important;
+  overflow-y: auto !important;
+  background: var(--white) !important;
+  border-radius: var(--radius-lg) !important;
+  box-shadow: var(--shadow-xl) !important;
+  z-index: 10000 !important;
+  border: 1px solid var(--gray-200) !important;
+  animation: nexaSlideDown 0.18s ease;
+}
+
+.notif-panel-header {
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--gray-100);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  background: var(--white);
+  z-index: 1;
+}
+
+.notif-panel-header h4 {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--gray-900);
+}
+
+.notif-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--gray-100);
+  transition: background 0.12s;
+  cursor: pointer;
+}
+
+.notif-item:hover {
+  background: var(--gray-50);
+}
+
+.notif-item:last-child {
+  border-bottom: none;
+}
+
+.notif-item-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.notif-item-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.notif-item-title {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--gray-800);
+  margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.notif-item-desc {
+  font-size: 0.76rem;
+  color: var(--gray-500);
+  line-height: 1.4;
+}
+
+.notif-item-time {
+  font-size: 0.7rem;
+  color: var(--gray-400);
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.notif-unread-dot {
+  width: 7px;
+  height: 7px;
+  background: var(--primary);
+  border-radius: 50%;
+  margin-top: 7px;
+  flex-shrink: 0;
+}
+
+/* ════════════════════════════════════════════
+   ANIMATIONS
+   ════════════════════════════════════════════ */
+@keyframes nexaFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes nexaSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes nexaSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ════════════════════════════════════════════
+   RESPONSIVE
+   ════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  :root {
+    --sidebar-width: 0px;
+  }
+
+  .sidebar {
+    transform: translateX(-100%);
+    width: 220px;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+
+  .content-area {
+    padding: 16px;
+  }
+
+  .top-bar {
+    padding: 0 16px;
+  }
+
+  .search-input,
+  .search-input:focus {
+    width: 160px;
+  }
+
+  .action-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #notificationPanel {
+    right: 8px !important;
+    width: calc(100vw - 16px) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .action-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
