@@ -1,0 +1,8 @@
+2026-03-27 20:52:19 - ERR: require_once(lib/totp.php): Failed to open stream: No such file or directory in auth.php:10
+2026-03-27 20:55:43 - ERR: require_once(/home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/lib/totp.php): Failed to open stream: No such file or directory in auth.php:10
+2026-03-27 21:03:28 - ERR: Undefined array key "two_factor_enabled" in auth.php:140
+2026-03-27 21:05:26 - ERR: Undefined array key "two_factor_enabled" in auth.php:141
+2026-03-27 21:32:30 - >>> REQUEST [GET]: /api/auth.php?action=verify
+2026-03-27 21:36:08 - >>> REQUEST [GET]: /api/auth.php?action=verify | Origin: NO_ORIGIN
+2026-03-27 21:37:29 - >>> REQUEST [GET]: /api/auth.php?action=verify | Origin: NO_ORIGIN
+2026-03-27 21:37:42 - >>> REQUEST [GET]: /api/auth.php?action=verify | Origin: NO_ORIGIN

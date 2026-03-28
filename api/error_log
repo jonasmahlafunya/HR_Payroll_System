@@ -1,0 +1,121 @@
+[27-Mar-2026 13:56:31 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function set_cors_headers() in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/config.php:11
+Stack trace:
+#0 /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/sync.php(5): require_once()
+#1 {main}
+  thrown in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/config.php on line 11
+[27-Mar-2026 13:56:37 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function set_cors_headers() in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/config.php:11
+Stack trace:
+#0 /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/auth.php(9): require_once()
+#1 {main}
+  thrown in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/config.php on line 11
+[27-Mar-2026 13:56:55 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function set_cors_headers() in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/config.php:11
+Stack trace:
+#0 /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/auth.php(9): require_once()
+#1 {main}
+  thrown in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/config.php on line 11
+[27-Mar-2026 14:00:58 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function set_cors_headers() in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/config.php:11
+Stack trace:
+#0 /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/sync.php(5): require_once()
+#1 {main}
+  thrown in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/config.php on line 11
+[27-Mar-2026 14:01:11 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function set_cors_headers() in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/config.php:11
+Stack trace:
+#0 /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/auth.php(9): require_once()
+#1 {main}
+  thrown in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/config.php on line 11
+[27-Mar-2026 14:01:33 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function set_cors_headers() in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/config.php:11
+Stack trace:
+#0 /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/auth.php(9): require_once()
+#1 {main}
+  thrown in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/config.php on line 11
+[27-Mar-2026 14:01:45 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function set_cors_headers() in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/config.php:11
+Stack trace:
+#0 /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/sync.php(5): require_once()
+#1 {main}
+  thrown in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/config.php on line 11
+[27-Mar-2026 16:55:10 UTC] PHP Warning:  require_once(lib/totp.php): Failed to open stream: No such file or directory in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/auth.php on line 10
+[27-Mar-2026 16:55:10 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'lib/totp.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/auth.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/auth.php on line 10
+[27-Mar-2026 16:56:07 UTC] PHP Warning:  require_once(lib/totp.php): Failed to open stream: No such file or directory in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/auth.php on line 10
+[27-Mar-2026 16:56:07 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'lib/totp.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/auth.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/auth.php on line 10
+[27-Mar-2026 16:56:15 UTC] PHP Warning:  require_once(lib/totp.php): Failed to open stream: No such file or directory in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/auth.php on line 10
+[27-Mar-2026 16:56:15 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'lib/totp.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/auth.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/auth.php on line 10
+[27-Mar-2026 16:59:10 UTC] PHP Warning:  require_once(lib/totp.php): Failed to open stream: No such file or directory in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/auth.php on line 10
+[27-Mar-2026 16:59:10 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'lib/totp.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/auth.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/auth.php on line 10
+[27-Mar-2026 16:59:13 UTC] PHP Warning:  require_once(lib/totp.php): Failed to open stream: No such file or directory in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/auth.php on line 10
+[27-Mar-2026 16:59:13 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'lib/totp.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/auth.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/auth.php on line 10
+[27-Mar-2026 17:01:23 UTC] PHP Warning:  require_once(lib/totp.php): Failed to open stream: No such file or directory in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/auth.php on line 10
+[27-Mar-2026 17:01:23 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'lib/totp.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/auth.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/auth.php on line 10
+[27-Mar-2026 17:05:47 UTC] PHP Warning:  require_once(lib/totp.php): Failed to open stream: No such file or directory in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/auth.php on line 10
+[27-Mar-2026 17:05:47 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'lib/totp.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/auth.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/auth.php on line 10
+[27-Mar-2026 17:06:23 UTC] PHP Warning:  require_once(lib/totp.php): Failed to open stream: No such file or directory in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/auth.php on line 10
+[27-Mar-2026 17:06:23 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'lib/totp.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/auth.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/auth.php on line 10
+[27-Mar-2026 17:08:40 UTC] PHP Warning:  require_once(lib/totp.php): Failed to open stream: No such file or directory in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/auth.php on line 10
+[27-Mar-2026 17:08:40 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'lib/totp.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/auth.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/auth.php on line 10
+[27-Mar-2026 17:11:23 UTC] PHP Warning:  require_once(lib/totp.php): Failed to open stream: No such file or directory in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/auth.php on line 10
+[27-Mar-2026 17:11:23 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'lib/totp.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/auth.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/auth.php on line 10
+[27-Mar-2026 19:39:44 UTC] PHP Warning:  require_once(lib/totp.php): Failed to open stream: No such file or directory in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/auth.php on line 10
+[27-Mar-2026 19:39:44 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'lib/totp.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/auth.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/auth.php on line 10
+[27-Mar-2026 20:19:58 UTC] PHP Warning:  require_once(lib/totp.php): Failed to open stream: No such file or directory in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/auth.php on line 10
+[27-Mar-2026 20:19:58 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'lib/totp.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/auth.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/auth.php on line 10
+[27-Mar-2026 20:26:20 UTC] PHP Warning:  require_once(lib/totp.php): Failed to open stream: No such file or directory in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/auth.php on line 10
+[27-Mar-2026 20:26:20 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'lib/totp.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/auth.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/auth.php on line 10
+[27-Mar-2026 20:31:36 UTC] PHP Warning:  require_once(lib/totp.php): Failed to open stream: No such file or directory in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/auth.php on line 10
+[27-Mar-2026 20:31:36 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'lib/totp.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/auth.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/auth.php on line 10
+[27-Mar-2026 20:31:53 UTC] PHP Warning:  require_once(lib/totp.php): Failed to open stream: No such file or directory in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/auth.php on line 10
+[27-Mar-2026 20:31:53 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'lib/totp.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/auth.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/auth.php on line 10
+[27-Mar-2026 20:32:06 UTC] PHP Warning:  require_once(lib/totp.php): Failed to open stream: No such file or directory in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/auth.php on line 10
+[27-Mar-2026 20:32:06 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'lib/totp.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/auth.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/auth.php on line 10
+[27-Mar-2026 20:37:37 UTC] PHP Parse error:  Unmatched '}' in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/config.php on line 290
+[27-Mar-2026 20:37:38 UTC] PHP Parse error:  Unmatched '}' in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/config.php on line 290
+[27-Mar-2026 20:37:38 UTC] PHP Parse error:  Unmatched '}' in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/config.php on line 290
+[27-Mar-2026 20:48:17 UTC] PHP Fatal error:  Cannot redeclare debug_log() (previously declared in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/config.php:9) in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/config.php on line 170
+[27-Mar-2026 20:48:18 UTC] PHP Fatal error:  Cannot redeclare debug_log() (previously declared in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/config.php:9) in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/config.php on line 170
+[27-Mar-2026 20:48:18 UTC] PHP Fatal error:  Cannot redeclare debug_log() (previously declared in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/config.php:9) in /home/nexasyst/public_html/hr.payroll.nexasystems.co.za/api/config.php on line 170
