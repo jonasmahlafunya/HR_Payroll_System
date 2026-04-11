@@ -1,0 +1,18 @@
+[2026-03-29 11:17:02] >>> AUTH [GET]: /api/auth.php?action=csrf
+[2026-03-29 11:17:02] DB Connection Failed: SQLSTATE[28000] [1045] Access denied for user 'nexasyst'@'localhost' (using password: NO)
+[2026-03-29 11:17:02] >>> AUTH [GET]: /api/auth.php?action=verify
+[2026-03-29 11:17:02] DB Connection Failed: SQLSTATE[28000] [1045] Access denied for user 'nexasyst'@'localhost' (using password: NO)
+[2026-03-29 11:17:05] >>> AUTH [GET]: /api/auth.php?action=csrf
+[2026-03-29 11:17:05] DB Connection Failed: SQLSTATE[28000] [1045] Access denied for user 'nexasyst'@'localhost' (using password: NO)
+[2026-03-29 11:17:05] >>> AUTH [GET]: /api/auth.php?action=verify
+[2026-03-29 11:17:05] DB Connection Failed: SQLSTATE[28000] [1045] Access denied for user 'nexasyst'@'localhost' (using password: NO)
+[2026-03-29 11:17:54] >>> AUTH [GET]: /api/auth.php?action=csrf
+[2026-03-29 11:17:54] DB Connection Failed: SQLSTATE[28000] [1045] Access denied for user 'nexasyst'@'localhost' (using password: NO)
+[2026-03-29 11:17:55] >>> AUTH [GET]: /api/auth.php?action=verify
+[2026-03-29 11:17:55] DB Connection Failed: SQLSTATE[28000] [1045] Access denied for user 'nexasyst'@'localhost' (using password: NO)
+[2026-03-29 11:18:09] >>> AUTH [POST]: /api/auth.php?action=login
+[2026-03-29 11:18:09] DB Connection Failed: SQLSTATE[28000] [1045] Access denied for user 'nexasyst'@'localhost' (using password: NO)
+[2026-03-29 11:18:26] >>> AUTH [GET]: /api/auth.php?action=csrf
+[2026-03-29 11:18:26] DB Connection Failed: SQLSTATE[28000] [1045] Access denied for user 'nexasyst'@'localhost' (using password: NO)
+[2026-03-29 11:18:26] >>> AUTH [GET]: /api/auth.php?action=verify
+[2026-03-29 11:18:26] DB Connection Failed: SQLSTATE[28000] [1045] Access denied for user 'nexasyst'@'localhost' (using password: NO)
